@@ -1,0 +1,157 @@
+package SCHOOLMANAGEMENTSYSTEM;
+class Person {
+    private int id;
+    private String name;
+    private int age;
+    private String city;
+    public Person(int id,String name,int age,String city){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+        this.city=city;
+    }
+    public int getId(){
+        return this.id;
+    }
+    public void setId(int id){
+        if(id>0){
+            this.id=id;
+        }
+        else{
+            System.out.println("Invalid Id.");
+        }
+    }
+    public String getName(){
+        return this.name;
+    }
+    public void setName(String name){
+        if(name!=null&&!name.isEmpty()){
+            this.name=name;
+        }
+        else{
+            System.out.println("Invalid name.");
+        }
+    }
+    public int getAge(){
+        return this.age;
+    }
+    public void setAge(int age){
+        if(id>0){
+            this.age=age;
+        }
+        else{
+            System.out.println("Invalid Age.");
+        }
+    }
+    public String getCity(){
+        return this.city;
+    }
+    public void setCity(String city){
+        if(city!=null&&!city.isEmpty()){
+            this.city=city;
+        }
+        else{
+            System.out.println("Invalid city.");
+        }
+    }
+    public void Display(){
+        System.out.println("Id : "+id+" Name : "+name+" Age : "+age+" City : "+city);
+    }
+
+}
+
+package SCHOOLMANAGEMENTSYSTEM;
+class Student extends Person{
+    private String studentid;
+    private String grade;
+    public Student(int id,String name,int age,String city,String studentid,String grade){
+        super(id,name,age,city);
+        this.studentid=studentid;
+        this.grade=grade;
+    }
+    public String getStudentid() {
+        return studentid;
+    }
+    public void setStudentid(String studentid) {
+        this.studentid = studentid;
+    }
+    public String getGrade() {
+        return grade;
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+    @Override
+    public void Display(){
+        super.Display();
+        System.out.println(" Studentid : "+studentid+" Grade : "+grade);
+    }
+
+}
+
+package SCHOOLMANAGEMENTSYSTEM;
+class Teacher extends Person{
+    private String subject;
+    private String salary;
+    public Teacher(int id,String name,int age,String city,String subject,String salary){
+        super(id,name,age,city);
+        this.subject=subject;
+        this.salary=salary;
+    }
+    public String getSubject() {
+        return subject;
+    }
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+    public String getSalary() {
+        return salary;
+    }
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+    @Override
+    public void Display(){
+        super.Display();
+        System.out.print(" Subject : "+subject+" Salary : "+salary);
+    }
+}
+
+package SCHOOLMANAGEMENTSYSTEM;
+class Adminstaff extends Person {
+    private String dept;
+    private String role;
+    public Adminstaff(int id,String name,int age,String city,String dept,String role){
+        super(id,name,age,city);
+        this.dept=dept;
+        this.role=role;
+    }
+    public String getDept() {
+        return dept;
+    }
+    public void setDept(String dept) {
+        this.dept = dept;
+    }
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
+    @Override
+    public void Display(){
+        super.Display();
+        System.out.print(" Department : "+dept+" Role : "+role);
+    }
+}
+
+package SCHOOLMANAGEMENTSYSTEM;
+public class Schoolmanagement {
+    public static void main(String args[]){
+        Person s1=new Student(1,"Harirajan",19,"Karur","BEC066","O");
+        Person s2=new Teacher(1,"Gokul",30,"Namakkal","JAVA","45000");
+        System.out.println("Schoolmanagementsystem : ");
+        s1.Display();
+        s2.Display();
+    }
+}
